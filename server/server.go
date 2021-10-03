@@ -106,7 +106,7 @@ func loginHandler(writer http.ResponseWriter, request *http.Request) {
 		writer.WriteHeader(http.StatusFound)
 		return
 	}
-	outputHTML(writer, request, "server/static/login.html")
+	outputHTML(writer, request, "static/login.html")
 }
 
 func authHandler(w http.ResponseWriter, r *http.Request) {
@@ -124,8 +124,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusFound)
 		return
 	}
-
-	outputHTML(w, r, "server/static/auth.html")
+	outputHTML(w, r, "static/auth.html")
 }
 
 func dumpRequest(writer io.Writer, header string, r *http.Request) error {
@@ -199,8 +198,8 @@ func main() {
 	})
 
 	log.Printf("Server is running at %d port.\n", portvar)
-	log.Printf("Point your OAuth client Auth endpoint to %s:%d%s", "http://localhost", portvar, "/oauth/authorize")
-	log.Printf("Point your OAuth client Token endpoint to %s:%d%s", "http://localhost", portvar, "/oauth/token")
+	log.Printf("OAuth client Auth endpoint to %s:%d%s", "http://localhost", portvar, "/oauth/authorize")
+	log.Printf("OAuth client Token endpoint to %s:%d%s", "http://localhost", portvar, "/oauth/token")
 
 	http.ListenAndServe(fmt.Sprintf(":%d", portvar), nil)
 }
