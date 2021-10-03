@@ -60,3 +60,7 @@ Enter admin for user name and password (Optional)
 
 ## Token page
 ![token](https://github.com/StephenDsouza90/oauth-golang/blob/main/server/static/token.png)
+
+## Resources:
+1. https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2
+2. https://github.com/go-oauth2/oauth2/blob/master/example/README.md
