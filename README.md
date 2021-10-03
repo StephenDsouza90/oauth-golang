@@ -54,5 +54,9 @@ Please open http://localhost:9094/upload-photos
 Enter admin for user name and password (Optional)
 
 ![login](https://github.com/StephenDsouza90/oauth-golang/blob/main/server/static/login.png)
+
+## Auth page
 ![auth](https://github.com/StephenDsouza90/oauth-golang/blob/main/server/static/auth.png)
+
+## Token page
 ![token](https://github.com/StephenDsouza90/oauth-golang/blob/main/server/static/token.png)
