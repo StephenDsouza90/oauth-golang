@@ -27,11 +27,11 @@ var (
 			TokenURL: authServerURL + "/oauth/token",
 		},
 	}
-	globalToken *oauth2.Token // Non-concurrent security
+	globalToken *oauth2.Token
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/upload-photos", func(w http.ResponseWriter, r *http.Request) {
 		u := config.AuthCodeURL("xyz",
 			oauth2.SetAuthURLParam("code_challenge", genCodeChallengeS256("s256example")),
 			oauth2.SetAuthURLParam("code_challenge_method", "S256"))
@@ -93,7 +93,8 @@ func main() {
 		e.Encode(token)
 	})
 
-	log.Println("Client is running at 9094 port. Please open http://localhost:9094")
+	log.Println("Client is running at 9094 port.")
+	log.Println("Please open http://localhost:9094/upload-photos")
 	http.ListenAndServe(":9094", nil)
 }
 
